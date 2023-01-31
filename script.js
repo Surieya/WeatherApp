@@ -8,8 +8,8 @@ let getWeather = () =>{
 
   }
   else{
-    cityRef.value = "";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key}&units=metric`;
+    cityRef.value = "";
     fetch(url).then(
       (resp) => resp.json()
     )
