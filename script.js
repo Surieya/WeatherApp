@@ -1,7 +1,6 @@
 let results = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
 let cityRef = document.getElementById("city");
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityRef.value}&appid=${key}&units=metric`;
 let getWeather = () =>{
   let cityValue = cityRef.value;
   if(cityValue==null){
@@ -10,6 +9,7 @@ let getWeather = () =>{
   }
   else{
     cityRef.value = "";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key}&units=metric`;
     fetch(url).then(
       (resp) => resp.json()
     )
